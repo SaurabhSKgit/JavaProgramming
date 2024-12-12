@@ -1,0 +1,29 @@
+import java.util.*;
+ 
+public class Main {
+ 
+    public static String removeDuplicates(String input) {
+        // Split the input string into words using whitespace as the delimiter
+        String[] words = input.split(" ");
+ 
+        // Use LinkedHashSet to preserve the order of insertion
+        Set<String> uniqueWords = new LinkedHashSet<>();
+ 
+        // Add words to the set, duplicates will be automatically removed
+        for (String word : words) {
+            uniqueWords.add(word);
+        }
+ 
+        // Join the unique words back into a single string with spaces in between
+        return String.join(" ", uniqueWords);
+    }
+ 
+    public static void main(String[] args) {
+        String in = "happy Happy birthday happy";
+        String input=in.toLowerCase();
+        String result = removeDuplicates(input);
+ 
+        System.out.println("Original String: " + input);
+        System.out.println("removing duplicates: " + result);
+    }
+}
